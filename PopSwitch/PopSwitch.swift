@@ -20,7 +20,7 @@ open class PopSwitch: UIView {
     open var state:State!
     
     private lazy var onXOrigin: CGFloat = {
-        return self.frame.width - self.circle.frame.size.width / 2
+        return self.frame.width - self.circle.frame.size.width
     }()
     
     private lazy var offXOrigin: CGFloat = {
@@ -53,10 +53,17 @@ open class PopSwitch: UIView {
     }
     
     private func animate(to state:State) {
+        
+        var xOrigin = offXOrigin
+        
         if state == .On {
             //animating to the ON position
-        } else {
-            //animating to the OFF position
+            xOrigin = onXOrigin
+        }
+        
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+            self.circle.frame.origin = CGPoint(x: xOrigin, y: 0)
+        }) { (complete) in
         }
     }
     
@@ -79,7 +86,7 @@ open class PopSwitch: UIView {
         } else {
             self.state = .On
         }
-        
+        animate(to: self.state)
     }
     
     //programmatically set state

@@ -58,11 +58,11 @@
 			children = (
 				5079C5C01F2A94BB001DCAD9 /* AppDelegate.swift */,
 				5079C5C21F2A94BB001DCAD9 /* ViewController.swift */,
+				500AEDAC1F2A95AF0027AEEE /* PopSwitch.swift */,
 				5079C5C41F2A94BB001DCAD9 /* Main.storyboard */,
 				5079C5C71F2A94BB001DCAD9 /* Assets.xcassets */,
 				5079C5C91F2A94BB001DCAD9 /* LaunchScreen.storyboard */,
 				5079C5CC1F2A94BB001DCAD9 /* Info.plist */,
-				500AEDAC1F2A95AF0027AEEE /* PopSwitch.swift */,
 			);
 			path = PopSwitch;
 			sourceTree = "<group>";
