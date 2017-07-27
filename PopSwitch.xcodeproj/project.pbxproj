@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500AEDAD1F2A95AF0027AEEE /* PopSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500AEDAC1F2A95AF0027AEEE /* PopSwitch.swift */; };
 		5079C5C11F2A94BB001DCAD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5079C5C01F2A94BB001DCAD9 /* AppDelegate.swift */; };
 		5079C5C31F2A94BB001DCAD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5079C5C21F2A94BB001DCAD9 /* ViewController.swift */; };
 		5079C5C61F2A94BB001DCAD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5079C5C41F2A94BB001DCAD9 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		500AEDAC1F2A95AF0027AEEE /* PopSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopSwitch.swift; sourceTree = "<group>"; };
 		5079C5BD1F2A94BB001DCAD9 /* PopSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5079C5C01F2A94BB001DCAD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5079C5C21F2A94BB001DCAD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				5079C5C71F2A94BB001DCAD9 /* Assets.xcassets */,
 				5079C5C91F2A94BB001DCAD9 /* LaunchScreen.storyboard */,
 				5079C5CC1F2A94BB001DCAD9 /* Info.plist */,
+				500AEDAC1F2A95AF0027AEEE /* PopSwitch.swift */,
 			);
 			path = PopSwitch;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			files = (
 				5079C5C31F2A94BB001DCAD9 /* ViewController.swift in Sources */,
 				5079C5C11F2A94BB001DCAD9 /* AppDelegate.swift in Sources */,
+				500AEDAD1F2A95AF0027AEEE /* PopSwitch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +306,7 @@
 				5079C5D11F2A94BB001DCAD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
