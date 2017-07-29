@@ -45,9 +45,9 @@ open class PopSwitch: UIView {
         shapeLayer.fillColor = UIColor.white.cgColor
         
         if state == .On {
-            circle.frame.origin = CGPoint(x: offXOrigin, y: 0)
+            circle.frame.origin = CGPoint(x: startOnXOrigin, y: 0)
         } else {
-            circle.frame.origin = CGPoint(x: offXOrigin, y: 0)
+            circle.frame.origin = CGPoint(x: 0, y: 0)
         }
         
         shapeLayer.addSublayer(circle)
