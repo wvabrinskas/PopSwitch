@@ -19,12 +19,15 @@ open class PopSwitch: UIView {
 
     open var state:State!
     
-    private lazy var onXOrigin: CGFloat = {
+    private lazy var startOnXOrigin:CGFloat = {
         return self.frame.width - self.circle.frame.size.width
+    }()
+    private lazy var onXOrigin: CGFloat = {
+        return self.frame.width - (self.circle.frame.size.width / 2)
     }()
     
     private lazy var offXOrigin: CGFloat = {
-        return 0
+        return self.circle.frame.size.width / 2
     }()
     
     private lazy var circle:CAShapeLayer = {
@@ -41,30 +44,52 @@ open class PopSwitch: UIView {
         shapeLayer.path = UIBezierPath.init(roundedRect: self.bounds, cornerRadius: self.bounds.height / 2.0).cgPath
         shapeLayer.fillColor = UIColor.white.cgColor
         
-        shapeLayer.addSublayer(circle)
-        
         if state == .On {
-            circle.frame.origin = CGPoint(x: onXOrigin, y: 0)
+            circle.frame.origin = CGPoint(x: offXOrigin, y: 0)
         } else {
             circle.frame.origin = CGPoint(x: offXOrigin, y: 0)
         }
         
+        shapeLayer.addSublayer(circle)
+
         return shapeLayer
     }
     
+    fileprivate func onSpringAnimation() -> CASpringAnimation {
+        let spring = CASpringAnimation(keyPath: "position")
+        spring.damping = 10.0
+        spring.duration = spring.settlingDuration
+        spring.repeatCount = 0
+        spring.speed = 2
+        spring.toValue = [onXOrigin, self.circle.frame.size.height / 2]
+        spring.initialVelocity = 0
+        spring.fillMode = kCAFillModeBoth
+        spring.isRemovedOnCompletion = false
+        return spring
+    }
+    
+    fileprivate func offSpringAnimation() -> CASpringAnimation {
+        let spring = CASpringAnimation(keyPath: "position")
+        spring.damping = 10.0
+        spring.speed = 2
+        spring.duration = spring.settlingDuration
+        spring.repeatCount = 0
+        spring.toValue = [offXOrigin, self.circle.frame.size.height / 2]
+        spring.initialVelocity = 0
+        spring.fillMode = kCAFillModeBoth
+        spring.isRemovedOnCompletion = false
+        return spring
+    }
+
     private func animate(to state:State) {
-        
-        var xOrigin = offXOrigin
         
         if state == .On {
             //animating to the ON position
-            xOrigin = onXOrigin
+            circle.add(self.onSpringAnimation(), forKey: "onAnimation")
+        } else {
+            circle.add(self.offSpringAnimation(), forKey: "offAnimation")
         }
-        
-        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
-            self.circle.frame.origin = CGPoint(x: xOrigin, y: 0)
-        }) { (complete) in
-        }
+
     }
     
     public init(default state:State) {
@@ -77,6 +102,7 @@ open class PopSwitch: UIView {
         touchGesture.numberOfTapsRequired = 1
         touchGesture.numberOfTouchesRequired = 1
         self.addGestureRecognizer(touchGesture)
+
     }
     
     //through touch gesture
