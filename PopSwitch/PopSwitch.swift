@@ -11,13 +11,16 @@ import UIKit
 import CoreGraphics
 import QuartzCore
 
+public typealias SwitchColor = (background: CGColor?, switch: CGColor?)
 open class PopSwitch: UIView {
     
     public enum State {
         case On,Off
     }
-
+    
     open var state:State!
+    private var color:SwitchColor?
+    private let height = 100
     
     private lazy var startOnXOrigin:CGFloat = {
         return self.frame.width - self.circle.frame.size.width
@@ -30,30 +33,29 @@ open class PopSwitch: UIView {
         return self.circle.frame.size.width / 2
     }()
     
-    private lazy var circle:CAShapeLayer = {
-        let circleLayer = CAShapeLayer()
-        circleLayer.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        circleLayer.path = UIBezierPath.init(ovalIn: circleLayer.bounds).cgPath
-        circleLayer.fillColor = UIColor.green.cgColor
-        return circleLayer
-    }()
-    
-    private func getSwitchLayer(with state: State) -> CAShapeLayer {
+    private lazy var switchLayer:CAShapeLayer = {
         let shapeLayer = CAShapeLayer()
         shapeLayer.frame = self.bounds
         shapeLayer.path = UIBezierPath.init(roundedRect: self.bounds, cornerRadius: self.bounds.height / 2.0).cgPath
-        shapeLayer.fillColor = UIColor.white.cgColor
-        
-        if state == .On {
-            circle.frame.origin = CGPoint(x: startOnXOrigin, y: 0)
+        shapeLayer.fillColor = self.color?.background ?? UIColor.white.cgColor
+        if self.state == .On {
+            self.circle.frame.origin = CGPoint(x: self.startOnXOrigin, y: 0)
         } else {
-            circle.frame.origin = CGPoint(x: 0, y: 0)
+            self.circle.frame.origin = CGPoint(x: 0, y: 0)
         }
-        
-        shapeLayer.addSublayer(circle)
 
+        shapeLayer.addSublayer(self.circle)
+        
         return shapeLayer
-    }
+    }()
+    
+    private lazy var circle:CAShapeLayer = {
+        let circleLayer = CAShapeLayer()
+        circleLayer.frame = CGRect(x: 0, y: 0, width: self.height, height: self.height)
+        circleLayer.path = UIBezierPath.init(ovalIn: circleLayer.bounds).cgPath
+        circleLayer.fillColor = self.color?.switch ?? UIColor.green.cgColor
+        return circleLayer
+    }()
     
     fileprivate func onSpringAnimation() -> CASpringAnimation {
         let spring = CASpringAnimation(keyPath: "position")
@@ -81,8 +83,39 @@ open class PopSwitch: UIView {
         return spring
     }
 
+    fileprivate func scaleDownAnimation() -> CASpringAnimation {
+        let spring = CASpringAnimation(keyPath: "transform.scale")
+        spring.damping = 10.0
+        spring.speed = 2
+        spring.duration = spring.settlingDuration
+        spring.repeatCount = 0
+        spring.toValue = [0.6,0.6]
+        spring.initialVelocity = 0
+        spring.fillMode = kCAFillModeBoth
+        spring.isRemovedOnCompletion = false
+        return spring
+    }
+    
+    fileprivate func scaleUpAnimation() -> CASpringAnimation {
+        let spring = CASpringAnimation(keyPath: "transform.scale")
+        spring.damping = 10.0
+        spring.speed = 2
+        spring.duration = spring.settlingDuration
+        spring.repeatCount = 0
+        spring.toValue = [1.0,1.0]
+        spring.initialVelocity = 0
+        spring.fillMode = kCAFillModeBoth
+        spring.isRemovedOnCompletion = false
+        return spring
+    }
+    
+    
     private func animate(to state:State) {
         
+        let scaleGroup = CAAnimationGroup()
+        scaleGroup.animations = [self.scaleDownAnimation(), self.scaleUpAnimation()]
+        circle.add(scaleGroup, forKey: "scale")
+
         if state == .On {
             //animating to the ON position
             circle.add(self.onSpringAnimation(), forKey: "onAnimation")
@@ -92,17 +125,17 @@ open class PopSwitch: UIView {
 
     }
     
-    public init(default state:State) {
-        super.init(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
+    public init(position state:State, color: SwitchColor?) {
+        super.init(frame: CGRect(x: 0, y: 0, width: 200, height: self.height))
         self.backgroundColor = .clear
-        self.layer.addSublayer(getSwitchLayer(with: state))
         self.state = state
-        
+        self.color = color
+        self.layer.addSublayer(switchLayer)
+
         let touchGesture = UITapGestureRecognizer(target: self, action: #selector(changeState))
         touchGesture.numberOfTapsRequired = 1
         touchGesture.numberOfTouchesRequired = 1
         self.addGestureRecognizer(touchGesture)
-
     }
     
     //through touch gesture
