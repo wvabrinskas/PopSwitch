@@ -4,7 +4,7 @@
 A switch that has a fun spring animation added.
 
 Works for iOS 10+
-
+* Note: it is much faster than this gif shows. 
 ![](https://github.com/wvabrinskas/PopSwitch/blob/master/public/PopSwitch.gif)
 
 # Installation
