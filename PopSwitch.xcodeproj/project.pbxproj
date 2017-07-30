@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91138BE41F2E659900474C5F /* PopSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91138BE31F2E659900474C5F /* PopSwitch.swift */; };
 		91F16C361F2E64F8001DBF00 /* PopSwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 91F16C341F2E64F8001DBF00 /* PopSwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		91138BE31F2E659900474C5F /* PopSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopSwitch.swift; sourceTree = "<group>"; };
 		91F16C311F2E64F8001DBF00 /* PopSwitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopSwitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F16C341F2E64F8001DBF00 /* PopSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopSwitch.h; sourceTree = "<group>"; };
 		91F16C351F2E64F8001DBF00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				91F16C341F2E64F8001DBF00 /* PopSwitch.h */,
+				91138BE31F2E659900474C5F /* PopSwitch.swift */,
 				91F16C351F2E64F8001DBF00 /* Info.plist */,
 			);
 			path = PopSwitch;
@@ -95,6 +98,7 @@
 				TargetAttributes = {
 					91F16C301F2E64F8001DBF00 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91138BE41F2E659900474C5F /* PopSwitch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +246,7 @@
 		91F16C3A1F2E64F8001DBF00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -252,6 +258,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wvabrinskas.PopSwitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -259,6 +266,7 @@
 		91F16C3B1F2E64F8001DBF00 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -293,6 +301,7 @@
 				91F16C3B1F2E64F8001DBF00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
