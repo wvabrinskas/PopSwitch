@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91063F031F2E73FF00BDB163 /* PopSwitchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91063F021F2E73FF00BDB163 /* PopSwitchDelegate.swift */; };
 		91138BE41F2E659900474C5F /* PopSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91138BE31F2E659900474C5F /* PopSwitch.swift */; };
 		91F16C361F2E64F8001DBF00 /* PopSwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 91F16C341F2E64F8001DBF00 /* PopSwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		91063F021F2E73FF00BDB163 /* PopSwitchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopSwitchDelegate.swift; sourceTree = "<group>"; };
 		91138BE31F2E659900474C5F /* PopSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopSwitch.swift; sourceTree = "<group>"; };
 		91F16C311F2E64F8001DBF00 /* PopSwitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopSwitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F16C341F2E64F8001DBF00 /* PopSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopSwitch.h; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			children = (
 				91F16C341F2E64F8001DBF00 /* PopSwitch.h */,
 				91138BE31F2E659900474C5F /* PopSwitch.swift */,
+				91063F021F2E73FF00BDB163 /* PopSwitchDelegate.swift */,
 				91F16C351F2E64F8001DBF00 /* Info.plist */,
 			);
 			path = PopSwitch;
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91063F031F2E73FF00BDB163 /* PopSwitchDelegate.swift in Sources */,
 				91138BE41F2E659900474C5F /* PopSwitch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
