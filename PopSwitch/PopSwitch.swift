@@ -20,6 +20,7 @@ open class PopSwitch: UIView {
     }
     
     open var state:State!
+    open var delegate:PopSwitchDelegate?
     
     private var color:SwitchColor?
     private static let height:CGFloat = 25.0
@@ -148,12 +149,14 @@ open class PopSwitch: UIView {
             self.state = .On
         }
         animate(to: self.state)
+        delegate?.valueChanged(to: self.state)
     }
     
     //programmatically set state
     open func setState(state: State) {
         self.state = state
         animate(to: state)
+        delegate?.valueChanged(to: state)
     }
     
     required public init?(coder aDecoder: NSCoder) {
