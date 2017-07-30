@@ -20,8 +20,8 @@ open class PopSwitch: UIView {
     
     open var state:State!
     private var color:SwitchColor?
-    private let height = 100
-    
+    private static let height:CGFloat = 50.0
+
     private lazy var startOnXOrigin:CGFloat = {
         return self.frame.width - self.circle.frame.size.width
     }()
@@ -36,7 +36,7 @@ open class PopSwitch: UIView {
     private lazy var switchLayer:CAShapeLayer = {
         let shapeLayer = CAShapeLayer()
         shapeLayer.frame = self.bounds
-        shapeLayer.path = UIBezierPath.init(roundedRect: self.bounds, cornerRadius: self.bounds.height / 2.0).cgPath
+        shapeLayer.path = UIBezierPath.init(roundedRect: self.bounds, cornerRadius: PopSwitch.height / 2.0).cgPath
         shapeLayer.fillColor = self.color?.background ?? UIColor.white.cgColor
         if self.state == .On {
             self.circle.frame.origin = CGPoint(x: self.startOnXOrigin, y: 0)
@@ -51,7 +51,7 @@ open class PopSwitch: UIView {
     
     private lazy var circle:CAShapeLayer = {
         let circleLayer = CAShapeLayer()
-        circleLayer.frame = CGRect(x: 0, y: 0, width: self.height, height: self.height)
+        circleLayer.frame = CGRect(x: 0, y: 0, width: PopSwitch.height, height: PopSwitch.height)
         circleLayer.path = UIBezierPath.init(ovalIn: circleLayer.bounds).cgPath
         circleLayer.fillColor = self.color?.switch ?? UIColor.green.cgColor
         return circleLayer
@@ -126,7 +126,7 @@ open class PopSwitch: UIView {
     }
     
     public init(position state:State, color: SwitchColor?) {
-        super.init(frame: CGRect(x: 0, y: 0, width: 200, height: self.height))
+        super.init(frame: CGRect(x: 0, y: 0, width: PopSwitch.height * 2.0, height: PopSwitch.height))
         self.backgroundColor = .clear
         self.state = state
         self.color = color
