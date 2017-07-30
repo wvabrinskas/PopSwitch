@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5079C5BC1F2A94BB001DCAD9"
-               BuildableName = "PopSwitch.app"
+               BlueprintIdentifier = "91F16C301F2E64F8001DBF00"
+               BuildableName = "PopSwitch.framework"
                BlueprintName = "PopSwitch"
                ReferencedContainer = "container:PopSwitch.xcodeproj">
             </BuildableReference>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5079C5BC1F2A94BB001DCAD9"
-            BuildableName = "PopSwitch.app"
-            BlueprintName = "PopSwitch"
-            ReferencedContainer = "container:PopSwitch.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5079C5BC1F2A94BB001DCAD9"
-            BuildableName = "PopSwitch.app"
+            BlueprintIdentifier = "91F16C301F2E64F8001DBF00"
+            BuildableName = "PopSwitch.framework"
             BlueprintName = "PopSwitch"
             ReferencedContainer = "container:PopSwitch.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5079C5BC1F2A94BB001DCAD9"
-            BuildableName = "PopSwitch.app"
+            BlueprintIdentifier = "91F16C301F2E64F8001DBF00"
+            BuildableName = "PopSwitch.framework"
             BlueprintName = "PopSwitch"
             ReferencedContainer = "container:PopSwitch.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

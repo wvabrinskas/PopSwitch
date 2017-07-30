@@ -7,27 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		500AEDAD1F2A95AF0027AEEE /* PopSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500AEDAC1F2A95AF0027AEEE /* PopSwitch.swift */; };
-		5079C5C11F2A94BB001DCAD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5079C5C01F2A94BB001DCAD9 /* AppDelegate.swift */; };
-		5079C5C31F2A94BB001DCAD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5079C5C21F2A94BB001DCAD9 /* ViewController.swift */; };
-		5079C5C61F2A94BB001DCAD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5079C5C41F2A94BB001DCAD9 /* Main.storyboard */; };
-		5079C5C81F2A94BB001DCAD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5079C5C71F2A94BB001DCAD9 /* Assets.xcassets */; };
-		5079C5CB1F2A94BB001DCAD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5079C5C91F2A94BB001DCAD9 /* LaunchScreen.storyboard */; };
+		91F16C361F2E64F8001DBF00 /* PopSwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 91F16C341F2E64F8001DBF00 /* PopSwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		500AEDAC1F2A95AF0027AEEE /* PopSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopSwitch.swift; sourceTree = "<group>"; };
-		5079C5BD1F2A94BB001DCAD9 /* PopSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5079C5C01F2A94BB001DCAD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5079C5C21F2A94BB001DCAD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5079C5C51F2A94BB001DCAD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5079C5C71F2A94BB001DCAD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5079C5CA1F2A94BB001DCAD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5079C5CC1F2A94BB001DCAD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91F16C311F2E64F8001DBF00 /* PopSwitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopSwitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91F16C341F2E64F8001DBF00 /* PopSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopSwitch.h; sourceTree = "<group>"; };
+		91F16C351F2E64F8001DBF00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5079C5BA1F2A94BB001DCAD9 /* Frameworks */ = {
+		91F16C2D1F2E64F8001DBF00 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,46 +27,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5079C5B41F2A94BA001DCAD9 = {
+		91F16C271F2E64F8001DBF00 = {
 			isa = PBXGroup;
 			children = (
-				5079C5BF1F2A94BB001DCAD9 /* PopSwitch */,
-				5079C5BE1F2A94BB001DCAD9 /* Products */,
+				91F16C331F2E64F8001DBF00 /* PopSwitch */,
+				91F16C321F2E64F8001DBF00 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		5079C5BE1F2A94BB001DCAD9 /* Products */ = {
+		91F16C321F2E64F8001DBF00 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5079C5BD1F2A94BB001DCAD9 /* PopSwitch.app */,
+				91F16C311F2E64F8001DBF00 /* PopSwitch.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5079C5BF1F2A94BB001DCAD9 /* PopSwitch */ = {
+		91F16C331F2E64F8001DBF00 /* PopSwitch */ = {
 			isa = PBXGroup;
 			children = (
-				5079C5C01F2A94BB001DCAD9 /* AppDelegate.swift */,
-				5079C5C21F2A94BB001DCAD9 /* ViewController.swift */,
-				500AEDAC1F2A95AF0027AEEE /* PopSwitch.swift */,
-				5079C5C41F2A94BB001DCAD9 /* Main.storyboard */,
-				5079C5C71F2A94BB001DCAD9 /* Assets.xcassets */,
-				5079C5C91F2A94BB001DCAD9 /* LaunchScreen.storyboard */,
-				5079C5CC1F2A94BB001DCAD9 /* Info.plist */,
+				91F16C341F2E64F8001DBF00 /* PopSwitch.h */,
+				91F16C351F2E64F8001DBF00 /* Info.plist */,
 			);
 			path = PopSwitch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		91F16C2E1F2E64F8001DBF00 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91F16C361F2E64F8001DBF00 /* PopSwitch.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		5079C5BC1F2A94BB001DCAD9 /* PopSwitch */ = {
+		91F16C301F2E64F8001DBF00 /* PopSwitch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5079C5CF1F2A94BB001DCAD9 /* Build configuration list for PBXNativeTarget "PopSwitch" */;
+			buildConfigurationList = 91F16C391F2E64F8001DBF00 /* Build configuration list for PBXNativeTarget "PopSwitch" */;
 			buildPhases = (
-				5079C5B91F2A94BB001DCAD9 /* Sources */,
-				5079C5BA1F2A94BB001DCAD9 /* Frameworks */,
-				5079C5BB1F2A94BB001DCAD9 /* Resources */,
+				91F16C2C1F2E64F8001DBF00 /* Sources */,
+				91F16C2D1F2E64F8001DBF00 /* Frameworks */,
+				91F16C2E1F2E64F8001DBF00 /* Headers */,
+				91F16C2F1F2E64F8001DBF00 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -84,91 +81,63 @@
 			);
 			name = PopSwitch;
 			productName = PopSwitch;
-			productReference = 5079C5BD1F2A94BB001DCAD9 /* PopSwitch.app */;
-			productType = "com.apple.product-type.application";
+			productReference = 91F16C311F2E64F8001DBF00 /* PopSwitch.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5079C5B51F2A94BA001DCAD9 /* Project object */ = {
+		91F16C281F2E64F8001DBF00 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = williamvabrinskas;
+				ORGANIZATIONNAME = "William Vabrinskas";
 				TargetAttributes = {
-					5079C5BC1F2A94BB001DCAD9 = {
+					91F16C301F2E64F8001DBF00 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 24H8222GR4;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 5079C5B81F2A94BA001DCAD9 /* Build configuration list for PBXProject "PopSwitch" */;
+			buildConfigurationList = 91F16C2B1F2E64F8001DBF00 /* Build configuration list for PBXProject "PopSwitch" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
-			mainGroup = 5079C5B41F2A94BA001DCAD9;
-			productRefGroup = 5079C5BE1F2A94BB001DCAD9 /* Products */;
+			mainGroup = 91F16C271F2E64F8001DBF00;
+			productRefGroup = 91F16C321F2E64F8001DBF00 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5079C5BC1F2A94BB001DCAD9 /* PopSwitch */,
+				91F16C301F2E64F8001DBF00 /* PopSwitch */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5079C5BB1F2A94BB001DCAD9 /* Resources */ = {
+		91F16C2F1F2E64F8001DBF00 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5079C5CB1F2A94BB001DCAD9 /* LaunchScreen.storyboard in Resources */,
-				5079C5C81F2A94BB001DCAD9 /* Assets.xcassets in Resources */,
-				5079C5C61F2A94BB001DCAD9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5079C5B91F2A94BB001DCAD9 /* Sources */ = {
+		91F16C2C1F2E64F8001DBF00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5079C5C31F2A94BB001DCAD9 /* ViewController.swift in Sources */,
-				5079C5C11F2A94BB001DCAD9 /* AppDelegate.swift in Sources */,
-				500AEDAD1F2A95AF0027AEEE /* PopSwitch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		5079C5C41F2A94BB001DCAD9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5079C5C51F2A94BB001DCAD9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5079C5C91F2A94BB001DCAD9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5079C5CA1F2A94BB001DCAD9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		5079C5CD1F2A94BB001DCAD9 /* Debug */ = {
+		91F16C371F2E64F8001DBF00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -192,6 +161,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -215,10 +185,13 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		5079C5CE1F2A94BB001DCAD9 /* Release */ = {
+		91F16C381F2E64F8001DBF00 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -242,6 +215,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -257,32 +231,45 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		5079C5D01F2A94BB001DCAD9 /* Debug */ = {
+		91F16C3A1F2E64F8001DBF00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 24H8222GR4;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PopSwitch/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.williamvabrinskas.PopSwitch;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wvabrinskas.PopSwitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		5079C5D11F2A94BB001DCAD9 /* Release */ = {
+		91F16C3B1F2E64F8001DBF00 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 24H8222GR4;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PopSwitch/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.williamvabrinskas.PopSwitch;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wvabrinskas.PopSwitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -290,25 +277,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5079C5B81F2A94BA001DCAD9 /* Build configuration list for PBXProject "PopSwitch" */ = {
+		91F16C2B1F2E64F8001DBF00 /* Build configuration list for PBXProject "PopSwitch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5079C5CD1F2A94BB001DCAD9 /* Debug */,
-				5079C5CE1F2A94BB001DCAD9 /* Release */,
+				91F16C371F2E64F8001DBF00 /* Debug */,
+				91F16C381F2E64F8001DBF00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5079C5CF1F2A94BB001DCAD9 /* Build configuration list for PBXNativeTarget "PopSwitch" */ = {
+		91F16C391F2E64F8001DBF00 /* Build configuration list for PBXNativeTarget "PopSwitch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5079C5D01F2A94BB001DCAD9 /* Debug */,
-				5079C5D11F2A94BB001DCAD9 /* Release */,
+				91F16C3A1F2E64F8001DBF00 /* Debug */,
+				91F16C3B1F2E64F8001DBF00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5079C5B51F2A94BA001DCAD9 /* Project object */;
+	rootObject = 91F16C281F2E64F8001DBF00 /* Project object */;
 }

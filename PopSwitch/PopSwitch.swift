@@ -12,6 +12,7 @@ import CoreGraphics
 import QuartzCore
 
 public typealias SwitchColor = (background: CGColor?, switch: CGColor?)
+
 open class PopSwitch: UIView {
     
     public enum State {
@@ -19,8 +20,9 @@ open class PopSwitch: UIView {
     }
     
     open var state:State!
+    
     private var color:SwitchColor?
-    private static let height:CGFloat = 50.0
+    private static let height:CGFloat = 25.0
 
     private lazy var startOnXOrigin:CGFloat = {
         return self.frame.width - self.circle.frame.size.width
@@ -155,6 +157,6 @@ open class PopSwitch: UIView {
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("Cannot add PopSwitch as part of interface builder. Sorry =(")
     }
 }
