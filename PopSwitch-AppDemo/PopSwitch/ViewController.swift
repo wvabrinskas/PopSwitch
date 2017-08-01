@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let color:SwitchColor = (background: UIColor.red.cgColor, switch: UIColor.green.cgColor)
+        let color:SwitchColor = (background: UIColor.red.cgColor, switch: UIColor.black.cgColor)
         popSwitch = PopSwitch(position: .Off, color: color)
         centerView.addSubview(popSwitch)
     }
