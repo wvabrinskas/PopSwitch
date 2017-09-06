@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 public protocol PopSwitchDelegate {
- func valueChanged(to state:PopSwitch.State)
+ func valueChanged(switch:PopSwitch)
 }
