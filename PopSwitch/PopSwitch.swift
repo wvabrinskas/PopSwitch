@@ -188,14 +188,14 @@ open class PopSwitch: UIView {
             self.state = .On
         }
         animate(to: self.state)
-        delegate?.valueChanged(switch: self)
+        delegate?.valueChanged(control: self)
     }
     
     //programmatically set state
     open func setState(state: State) {
         self.state = state
         animate(to: state)
-        delegate?.valueChanged(switch: self)
+        delegate?.valueChanged(control: self)
     }
     
     required public init?(coder aDecoder: NSCoder) {
