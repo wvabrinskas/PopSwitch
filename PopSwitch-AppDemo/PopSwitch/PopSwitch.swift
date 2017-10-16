@@ -19,11 +19,16 @@ open class PopSwitch: UIView {
         case On,Off
     }
     
+    public enum SwitchType {
+        case Radio, Switch
+    }
+    
     open var state:State!
     open var delegate:PopSwitchDelegate?
     
     private var color:SwitchColor?
     private static let height:CGFloat = 30.0
+    private var switchType: SwitchType!
     
     private lazy var startOnXOrigin:CGFloat = {
         return self.frame.width - self.circle.frame.size.width
@@ -40,15 +45,21 @@ open class PopSwitch: UIView {
         let shapeLayer = CAShapeLayer()
         shapeLayer.frame = self.bounds
         shapeLayer.path = UIBezierPath.init(roundedRect: self.bounds, cornerRadius: PopSwitch.height).cgPath
-
-        if self.state == .On {
-            shapeLayer.fillColor = self.color?.background ?? UIColor.white.cgColor
-            self.circle.frame.origin = CGPoint(x: self.startOnXOrigin, y: 0)
+        
+        if self.switchType == .Switch {
+            if self.state == .On {
+                shapeLayer.fillColor = self.color?.background ?? UIColor.white.cgColor
+                self.circle.frame.origin = CGPoint(x: self.startOnXOrigin, y: 0)
+            } else {
+                shapeLayer.fillColor = self.getDarkerColor()
+                self.circle.frame.origin = CGPoint(x: 0, y: 0)
+            }
         } else {
             shapeLayer.fillColor = self.getDarkerColor()
-            self.circle.frame.origin = CGPoint(x: 0, y: 0)
+            shapeLayer.lineWidth = 5.0
+            shapeLayer.strokeColor = self.color?.background ?? UIColor.white.cgColor
         }
-        
+
         shapeLayer.addSublayer(self.circle)
         
         return shapeLayer
@@ -56,7 +67,15 @@ open class PopSwitch: UIView {
     
     private lazy var circle:CAShapeLayer = {
         let circleLayer = CAShapeLayer()
-        circleLayer.frame = CGRect(x: 0, y: 0, width: PopSwitch.height, height: PopSwitch.height)
+        var height = PopSwitch.height
+        var center = CGPoint(x:0, y:0)
+        
+        if self.switchType == .Radio {
+            height = PopSwitch.height - 7
+            center = CGPoint(x: (PopSwitch.height / 2) - (height / 2), y: (PopSwitch.height / 2) - (height / 2))
+        }
+        
+        circleLayer.frame = CGRect(x: center.x, y: center.y, width: height, height: height)
         circleLayer.path = UIBezierPath.init(ovalIn: circleLayer.bounds).cgPath
         circleLayer.fillColor = self.color?.switch ?? UIColor.green.cgColor
         return circleLayer
@@ -110,7 +129,10 @@ open class PopSwitch: UIView {
         spring.speed = 2
         spring.duration = spring.settlingDuration
         spring.repeatCount = 0
-        spring.toValue = [0.6,0.6]
+        spring.toValue = [0.0,0.0]
+        if switchType == .Switch {
+            spring.toValue = [0.6,0.6]
+        }
         spring.initialVelocity = 0
         spring.fillMode = kCAFillModeBoth
         spring.isRemovedOnCompletion = false
@@ -152,23 +174,36 @@ open class PopSwitch: UIView {
     
     private func animate(to state:State) {
         
-        let scaleGroup = CAAnimationGroup()
-        scaleGroup.animations = [self.scaleDownAnimation(), self.scaleUpAnimation()]
-        circle.add(scaleGroup, forKey: "scale")
-        
-        if state == .On {
-            //animating to the ON position
-            circle.add(self.onSpringAnimation(), forKey: "onAnimation")
-            switchLayer.add(self.colorOnChangeAnimation(), forKey: "onColorAnimation")
+        if switchType == .Switch {
+            let scaleGroup = CAAnimationGroup()
+            scaleGroup.animations = [self.scaleDownAnimation(), self.scaleUpAnimation()]
+            circle.add(scaleGroup, forKey: "scale")
+            
+            if state == .On {
+                //animating to the ON position
+                circle.add(self.onSpringAnimation(), forKey: "onAnimation")
+                switchLayer.add(self.colorOnChangeAnimation(), forKey: "onColorAnimation")
+            } else {
+                circle.add(self.offSpringAnimation(), forKey: "offAnimation")
+                switchLayer.add(self.colorOffChangeAnimation(), forKey: "offColorAnimation")
+            }
         } else {
-            circle.add(self.offSpringAnimation(), forKey: "offAnimation")
-            switchLayer.add(self.colorOffChangeAnimation(), forKey: "offColorAnimation")
+            if state == .On {
+                circle.add(self.scaleUpAnimation(), forKey: "onAnimation")
+            } else {
+                circle.add(self.scaleDownAnimation(), forKey: "offAnimation")
+            }
         }
         
     }
     
-    public init(position state:State, color: SwitchColor?) {
-        super.init(frame: CGRect(x: 0, y: 0, width: PopSwitch.height * 1.8, height: PopSwitch.height))
+    public init(position state:State, color: SwitchColor?, type:SwitchType) {
+        let width = type == .Radio ? PopSwitch.height : PopSwitch.height * 1.8
+
+        super.init(frame: CGRect(x: 0, y: 0, width: width, height: PopSwitch.height))
+        
+        self.switchType = type
+        
         self.backgroundColor = .clear
         self.state = state
         self.color = color
@@ -188,6 +223,7 @@ open class PopSwitch: UIView {
             self.state = .On
         }
         animate(to: self.state)
+
         delegate?.valueChanged(to: self.state)
     }
     

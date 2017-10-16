@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let color:SwitchColor = (background: UIColor.red.cgColor, switch: UIColor.black.cgColor)
-        popSwitch = PopSwitch(position: .Off, color: color)
+        popSwitch = PopSwitch(position: .Off, color: color, type: .Radio)
         centerView.addSubview(popSwitch)
     }
 

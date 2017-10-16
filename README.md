@@ -14,9 +14,12 @@ Note: it is much faster than this gif shows.
 # Simple to use
 * `import PopSwitch`
 * Create a SwitchColor for your switch: `let color:SwitchColor = (background: UIColor.white.cgColor, switch: UIColor.green.cgColor)`
-* Create an instance of PopSwitch `let popSwitch = PopSwitch(position: .Off, color: color)`
+* Create an instance of PopSwitch `let popSwitch = PopSwitch(position: .Off, color: color, type: .Switch)`
   * `color` can be `nil`. Will default to system white and green.
   * There are two positions: `PopSwitch.State.On` or `PopSwitch.State.Off`
+  * There are two switch types you can pick from:
+    * `SwitchType.Radio`
+    * `SwitchType.Switch`
 * Set the `PopSwitchDelegate` for your PopSwitch
   * `popSwitch.delegate = self`
 * Conform to the delegate function `valueChanged(to state: PopSwitch.State)`
