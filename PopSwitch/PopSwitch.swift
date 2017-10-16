@@ -86,9 +86,9 @@ open class PopSwitch: UIView {
         
         if let components = color?.background?.components {
             if components.count >= 3 {
-                let r = (components[0] * 255) - 120
-                let g = (components[1] * 255) - 120
-                let b = (components[2] * 255) - 120
+                let r = (components[0] * 255) - 100
+                let g = (components[1] * 255) - 100
+                let b = (components[2] * 255) - 100
                 
                 newColor = UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1.0).cgColor
             }
