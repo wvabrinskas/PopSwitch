@@ -78,6 +78,7 @@ open class PopSwitch: UIView {
         circleLayer.frame = CGRect(x: center.x, y: center.y, width: height, height: height)
         circleLayer.path = UIBezierPath.init(ovalIn: circleLayer.bounds).cgPath
         circleLayer.fillColor = self.color?.switch ?? UIColor.green.cgColor
+
         return circleLayer
     }()
     
@@ -213,6 +214,9 @@ open class PopSwitch: UIView {
         touchGesture.numberOfTapsRequired = 1
         touchGesture.numberOfTouchesRequired = 1
         self.addGestureRecognizer(touchGesture)
+
+        setState(state: state)
+    
     }
     
     //through touch gesture

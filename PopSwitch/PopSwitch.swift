@@ -213,6 +213,8 @@ open class PopSwitch: UIView {
         touchGesture.numberOfTapsRequired = 1
         touchGesture.numberOfTouchesRequired = 1
         self.addGestureRecognizer(touchGesture)
+        
+        setState(state: state, callback: false)
     }
     
     //through touch gesture
