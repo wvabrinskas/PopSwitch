@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PopSwitch"
-  s.version      = "1.0.17"
+  s.version      = "1.0.18"
   s.summary      = "Switch with a fun spring animation."
 
   # This description is used to generate tags and improve search results.
@@ -63,7 +63,7 @@ Pod::Spec.new do |s|
   #
 
   s.platform     = :ios
-  s.platform     = :ios, "10.0"
+  s.platform     = :ios, "9.3"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
